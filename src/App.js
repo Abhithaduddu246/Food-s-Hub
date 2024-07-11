@@ -1,29 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import Cards from './cardinsert/cards';
+import Table from './table/tables';
+import { imgData } from './imagecustom/imagelist';
 
-function App() {
-  return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+// function App() {
+//   return (
+//     <div>
+//     <Cards/>
+//     <Table/>
+//     </div>
+   
+//   );
+// }
 
-    <h1>hello world</h1>
-
-  );
-}
+const App=()=>{
+ 
+ return(
+  <div>
+   <div id="table">
+     <Table></Table>
+     </div>
+    <div style={{display:"flex"}}>
+    <Cards></Cards>
+    <Cards></Cards>
+    <Cards></Cards>
+    <Cards></Cards>
+    </div>
+  </div>
+ );
+};
 
 export default App;
 
