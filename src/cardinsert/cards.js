@@ -13,3 +13,16 @@ const Cards=()=>{
     )
 };
 export default Cards;
+ // <div>
+        {/* <h1>Empty Array Check</h1>
+        <ArrayCheck items={emptyArray} />
+
+        <h1>Filled Array Check</h1>
+        <ArrayCheck items={filledArray} /> */}
+
+        {/* <div>
+        <h1>Let's Count Here</h1>
+        <Counter /> */}
+{/*         
+      {/* </div> */}
+      // {/* // </div> */} */}

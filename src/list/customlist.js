@@ -2,13 +2,13 @@ const CustomList=(prop)=>{
     const {list}=prop;
 
     return(
-        <ol>
+        <ul>
         {list.map((eachItem)=>(
             
-            <li>{eachItem}</li>
+            <li style={{marginLeft:"10px"}}>{eachItem}</li>
             
         ))}
-         </ol>
+         </ul>
        
     )
 

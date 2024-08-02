@@ -12,6 +12,14 @@ import CustomList from './list/customlist';
 import ConditionalRendering from './conditional-rendering/conditions';
 import ArrayCheck from './conditional-rendering/conditions';
 
+import SubscribeComponent from './class-basedcomponents/subscribe';
+import Counter from './counter/counter';
+import SquareComponent from './squarecomponent/squaresincrement';
+import FetchExample from './fetchcomponent/fectch';
+import CountriesComponent from './countries/countries';
+import ReceipeComponent from './receipe-component/receipe';
+import NavBar from './navbar/navbar';
+
 
 
 
@@ -45,20 +53,28 @@ import ArrayCheck from './conditional-rendering/conditions';
 // }
 
 // export default App;
-const emptyArray = [];
-const filledArray = [1, 2, 3, 4, 5, 6, 7];
+// const emptyArray = [];
+// const filledArray = [1, 2, 3, 4, 5, 6, 7];
+import NavigationSite from './navigation/navigation';
 
 const App=()=>{
 
 
-    return (
-      <div>
-        <h1>Empty Array Check</h1>
-        <ArrayCheck items={emptyArray} />
+     return (
+      <>
+{/* <NavBar /> */}
+<NavigationSite />
+     
 
-        <h1>Filled Array Check</h1>
-        <ArrayCheck items={filledArray} />
-      </div>
+    {/* //   // <SubscribeComponent/>
+    //   // <Counter/>
+    //   // <SquareComponent/>
+    //   // <FetchExample/>
+
+    //   // <CountriesComponent/>
+    //   // <ReceipeComponent/> */}
+    </>
+      
     );
   
 }
