@@ -1,62 +1,72 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState,useEffect, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./receipes.css";
 import Footer from "../imagecustom/footer";
+import { RecipeContext  } from "../navigation/navigation";
+
+import { Link } from "react-router-dom";
+
+
 
 const ReceipeContent = () => {
-  const [receipeList, setReceipeList] = useState([]);
-  const [loader, setLoader] = useState(true);
-  const [error, setError] = useState(false);
+  
+  const {recipeList, addFavouriteDishHandler} = useContext(RecipeContext);
+ 
+  console.log(recipeList,"recepie lists");
 
-  useEffect(() => {
-    const fetchReceipes = async () => {
-      try {
-        const { status, data } = await axios.get('https://dummyjson.com/recipes');
-        if (status === 200) {
-          setReceipeList(data.recipes);
-          setLoader(false);
-        }
-      } catch (err) {
-        setError(true);
-        setLoader(false);
-      }
-    };
+ const addFoodHandler=(eachFood)=>{
+  addFavouriteDishHandler(eachFood);
 
-    fetchReceipes();
-  }, []);
+ };
+ 
+
+
 
   return (
     <>
-      {loader ? (
-        <div className="loader-container">
-          <div className="spinner-border text-primary" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        </div>
-      ) : (
-        <>
+      
           <center>
-            <h1 className="title">Get Your Recipes Here</h1>
+            <h1 className="title"  >Get Your Recipes Here</h1>
           </center>
           <div className="receipe-container">
-            {receipeList.map((eachReceipe, index) => {
+            {recipeList  && recipeList.length > 0 && recipeList.map((eachReceipe, index) => {
               const { name, image } = eachReceipe;
               return (
-                <div className="receipe-card" key={index}>
+               <div className="receipe-card" key={index}>
                   <h3 className="receipe-name">{name}</h3>
                   <img src={image} alt={name} className="receipe-image" />
-                  <button className="see-more-button">See More</button>
+                  {
+                    eachReceipe.existsInFavourite ?(
+                      <button className="see-more-button" ><Link to={"/favourite"} style={{color:"white",textDecoration:"none"}}>Go to fav</Link></button>
+                    ):(
+                      <button className="see-more-button" onClick={()=>addFoodHandler(eachReceipe)}>Add To Fav{" "}</button>
+                    )
+                  }
+                  
                 </div>
               );
             })}
           </div>
-        </>
-      )}
-      {error && <div className="error-message">Failed to load recipes. Please try again later.</div>}
-      <Footer></Footer>
+          
+        
+      
+    
+      <Footer />
     </>
   );
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 export default ReceipeContent;

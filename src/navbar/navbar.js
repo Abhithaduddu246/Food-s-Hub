@@ -1,9 +1,12 @@
 import { NavLink } from "react-router-dom";
 import "./nav.css";
+import { useContext } from "react";
+import { RecipeContext } from "../navigation/navigation";
 
 const NavBar = () => {
     const linkStyle = { margin: 50, textDecoration: "none", fontFamily: "cursive" };
-
+    const {favouriteDish}=useContext(RecipeContext)
+    
     return (
         <div className="" >
         
@@ -29,11 +32,18 @@ const NavBar = () => {
                             <NavLink to="/:receipeId" style={linkStyle}>SEE MORE</NavLink>
                             </li>
                             <li className="nav-item">
+                            <NavLink to="/favourite" style={linkStyle}>FAVOURITES {favouriteDish.length}</NavLink>
+                            </li>
+                            <li className="nav-item">
+                            <NavLink to="/search" style={linkStyle}>SEARCH</NavLink>
+                            </li>
+
+                            <li className="nav-item">
                             <NavLink to="/contact" style={linkStyle} end>CONTACT</NavLink>
                         
                         </li>
                     </ul>
-                    <form className="d-flex">
+                    {/* <form className="d-flex">
                         <input
                             className="form-control me-2"
                             type="search"
@@ -41,7 +51,7 @@ const NavBar = () => {
                             aria-label="Search"
                         />
                         <button className="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    </form> */}
                 </div>
             </div>
         </nav>

@@ -67,7 +67,7 @@ const fectchEachRecipe=async(recipeId)=>{
            {
 
             Object.keys(selectedRecipe).length>0 && <div>
-                 <div className="receipe-container">
+            <div className="receipe-container">
            
                 <div className="receipe-card">
                   <h3 className="receipe-name">{selectedRecipe.name}</h3>
