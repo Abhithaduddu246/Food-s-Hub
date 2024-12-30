@@ -56,6 +56,7 @@ import NavBar from './navbar/navbar';
 // const emptyArray = [];
 // const filledArray = [1, 2, 3, 4, 5, 6, 7];
 import NavigationSite from './navigation/navigation';
+import Products from './products/products-store';
 
 const App=()=>{
 
@@ -64,6 +65,7 @@ const App=()=>{
       <>
 {/* <NavBar /> */}
 <NavigationSite />
+{/* <Products/> */}
      
 
     {/* //   // <SubscribeComponent/>
