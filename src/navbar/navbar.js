@@ -10,14 +10,14 @@ const NavBar = () => {
     return (
         <div className="" >
         
-     <center>  <img src="https://www.goteso.com/products/assets/images/clone-scripts/zomato/zomato-clone-banner.png" style={{}} width={250} height={150}  /> <span style={{fontSize:"26px",fontFamily:"cursive"}}>Welcome to</span><img src="https://1000logos.net/wp-content/uploads/2021/06/Zomato-logo.jpg" style={{borderRadius:"10px",margin:"10px"}}  width={150}  height={80}/>
+     <center>  <img src="https://www.goteso.com/products/assets/images/clone-scripts/zomato/zomato-clone-banner.png" style={{}} width={250} height={150}  /> <span style={{fontSize:"26px",fontFamily:"cursive"}}>Welcome to</span><img src={window.location.origin+"/food-removebg-preview.png"} style={{borderRadius:"10px",margin:"10px"}}  width={250}  height={150}/>
        
      </center>
       
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+       <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav me-auto">
+               <ul className="navbar-nav me-auto">
                         <li className="nav-item">
                             <NavLink to="/" style={linkStyle} > HOME</NavLink>
                         </li>
@@ -28,9 +28,7 @@ const NavBar = () => {
                         <li className="nav-item">
                             <NavLink to="/receipe-details" style={linkStyle}>DETAILS</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to="/:receipeId" style={linkStyle}>SEE MORE</NavLink>
-                            </li>
+                        
                             <li className="nav-item">
                             <NavLink to="/favourite" style={linkStyle}>FAVOURITES {favouriteDish.length}</NavLink>
                             </li>
@@ -42,7 +40,7 @@ const NavBar = () => {
                             <NavLink to="/contact" style={linkStyle} end>CONTACT</NavLink>
                         
                         </li>
-                    </ul>
+                    </ul> 
                     {/* <form className="d-flex">
                         <input
                             className="form-control me-2"
